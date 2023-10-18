@@ -48,12 +48,20 @@ img {
   justify-content: center;
 }
 
+.j-even {
+  justify-content: space-evenly;
+}
+
 .j-end {
   justify-content: flex-end;
 }
 
 .a-center {
   align-items: center;
+}
+
+.a-start {
+  align-items: flex-start;
 }
 
 .space-even {
@@ -68,16 +76,28 @@ img {
   flex: 1;
 }
 
-.p10 {
-  padding: 10px;
+.p-1 {
+  padding: 1rem;
 }
 
-.g10 {
-  gap: 10px;
+.p-2 {
+  padding: 2rem;
+}
+
+.g-1 {
+  gap: 1rem;
 }
 
 .mb-10 {
   margin-bottom: 10px;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mx-1 {
+  margin: 0 1rem;
 }
 
 .text-center {
@@ -85,19 +105,33 @@ img {
 }
 
 .toolbar {
-  background-color: $color-medium;
+  width: 100%;
+  background-color: $color-darker;
   display: flex;
-  padding: 10px;
-  gap: 10px;
   color: white;
   flex-direction: column;
   box-sizing: border-box;
+  @include box-shadow-light;
 }
 
-.menu-item, button {
+.menu-item {
+  color: $color-medium;
+  text-decoration: none;
+  border-bottom: $color-medium solid 2px;
+  transition: 0.3s;
+  font-size: 1.1rem;
+  padding: 10px;
+
+  &:hover {
+    color: $color-light;
+    border-bottom: $color-light solid 2px;
+  }
+}
+
+button {
   text-decoration: none;
   font-weight: bold;
-  background-color: $color-darkest;
+  background-color: $color-medium;
   color: $color-light;
   padding: 10px 20px;
   border-radius: 5px;
@@ -107,14 +141,15 @@ img {
   border: none;
   display: flex;
   align-items: center;
+  margin: 10px;
 
   &:hover {
-    background-color: black;
+    background-color: $color-medium-hover;
   }
 }
 
 .active {
-  color: #e5d26d;
+  color: $color-light;
 }
 
 .menu-closed {
@@ -128,7 +163,32 @@ img {
 
 .about {
   color: $color-light;
-  padding: 10px;
+  padding: 1rem;
+}
+
+.oval-img-wrapper {
+  //max-height: 80vh;
+  border-radius: 50%;
+  overflow: hidden;
+  @include box-shadow-light;
+
+  & > img {
+    height: 100%;
+  }
+}
+
+.poem {
+  @include box-shadow-light;
+  text-align: center;
+  background-color: $color-light;
+  color: $color-darkest;
+  padding: 2rem 0.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
 @media (min-width: 600px) {
@@ -142,26 +202,55 @@ img {
     flex-direction: row;
   }
   .toolbar {
+    background-color: $color-darkest;
+    padding: 10px 0 0;
     flex-direction: row;
     justify-content: center;
     align-items: center;
   }
   .menu-item {
-    @include box-shadow-dark;
-    margin: 0 2rem;
-  }
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    border-bottom: $color-darkest solid 3px;
 
+    &:hover {
+      border-bottom: $color-medium-hover solid 3px;
+    }
+  }
+  .menu {
+    width: 100%;
+    display: flex;
+  }
 }
 
 @media (min-width: 768px) {
-
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 992px) {
-
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (min-width: 1200px) {
+  body {
+    max-width: 100px;
+  }
+  .flex-2-lg {
+    flex: 2;
+  }
+  .flex-3-lg {
+    flex: 3;
+  }
+}
 
+@media (min-width: 1400px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 

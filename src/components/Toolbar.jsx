@@ -23,12 +23,13 @@ const Toolbar = () => {
     }
 
     return (
-    <div className="toolbar g10 f-wrap">
+    <div className="toolbar f-wrap">
         <div className="btn-toggle d-flex j-end a-center">
             <button onClick={toggleMainMenu}>{toggleMenu}</button>
         </div>
-        <div className={"d-flex g10 f-wrap " + toggleDisplay} onClick={closeMainMenu}>
+        <div className={"d-flex menu " + toggleDisplay} onClick={closeMainMenu}>
             <NavLink className="menu-item" to="/">Pradinis</NavLink>
+            <NavLink className="menu-item" to="/poetry">Poezija</NavLink>
             <NavLink className="menu-item" to="/gallery">Galerija</NavLink>
             <NavLink className="menu-item" to="/about">Apie</NavLink>
         </div>
