@@ -2,7 +2,6 @@ import React from 'react';
 
 const Poetry = () => {
     return (
-        // <div className="d-flex f-wrap j-even p-2 g-1">
         <div className="p-1 cards">
             <div className="poem">
                 <h2>Skausmas</h2>

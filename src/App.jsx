@@ -6,6 +6,7 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Gallery from "./pages/Gallery.jsx";
 import Poetry from "./pages/Poetry.jsx";
+import SingleGallery from "./components/SingleGallery.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/about" element={<About/>} />
             <Route path="/poetry" element={<Poetry/>} />
             <Route path="/gallery" element={<Gallery/>} />
+            <Route path="/gallery/:title" element={<SingleGallery/>} />
         </Routes>
     </>
   )
