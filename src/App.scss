@@ -52,6 +52,10 @@ img {
   justify-content: space-evenly;
 }
 
+.j-start {
+  justify-content: flex-start;
+}
+
 .j-end {
   justify-content: flex-end;
 }
@@ -268,6 +272,75 @@ button {
 
 .flip {
   animation: flip-card 4s linear forwards;
+}
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(49, 49, 49, 0.95);
+  top: 0;
+  left: 0;
+  padding-right: 15px;
+
+  & > div {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.modal-buttons {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.photo-nav {
+  height: 100vh;
+
+  & > div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem 8rem;
+    font-size: 3rem;
+    color: $color-light;
+    transition: 0.3s;
+    cursor: pointer;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.btn-close {
+  font-size: 3rem;
+  color: $color-light;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.display-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > img {
+    max-width: 100vw;
+    max-height: 100vh;
+    pointer-events: none;
+  }
 }
 
 @keyframes flip-card {

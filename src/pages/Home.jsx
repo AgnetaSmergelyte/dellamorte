@@ -5,7 +5,6 @@ import profilePicture from "../images/20131028_165723.jpg";
 import scaryPicture from "../images/scary.jpg";
 
 const Home = () => {
-
     const [images, setImages] = useState([profilePicture, profilePicture, profilePicture]);
     const [flip, setFlip] = useState(['', '', '']);
 
