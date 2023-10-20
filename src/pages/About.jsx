@@ -14,7 +14,7 @@ const About = () => {
                     <h3 className="mb-1">- Apie mane -</h3>
                     <p>Nupiešiau šviesą savo lange, nes nenorėjau matyti užterštos šviesos.</p>
                     <p>Garsiai šaukiau, kad negirdėčiau triukšmo.</p>
-                    <p>Juokiausi, kad nematyčiauų ašarų ir verkiau, kad nematyčiau veidmainystės.</p>
+                    <p>Juokiausi, kad nematyčiau ašarų ir verkiau, kad nematyčiau veidmainystės.</p>
                     <p>Apgavau save, kad negalėtų apgauti kiti.</p>
                     <p>Bėgau, nes norėjau, kad kas nors pagautų.</p>
                     <p>Skridau tam, kad kai nukrisiu, galėčiau vėl pakilti.</p>

@@ -99,7 +99,7 @@ const Poetry = () => {
                 <br/>
                 <p>Blaškausi, bėgu ir slepiuos,</p>
                 <p>Šaukiu, prarasdama balsą</p>
-                <p>Bijau aš atsigęžti atgalios,</p>
+                <p>Bijau aš atsigręžti atgalios,</p>
                 <p className="mb-1">Bijau suklupti ir įkrist į tamsą.</p>
                 <p>Pavargstu ir pagalbos aš šaukiuos,</p>
                 <p>Gal išgirs kas šį nebylų garsą?</p>
