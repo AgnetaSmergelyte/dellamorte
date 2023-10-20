@@ -17,7 +17,7 @@ const images = {
         '20210801_212056_905.webp', '20210714_162953_019.jpg', '20210713_134237_670.jpg', '20210712_233521_563.jpg', '20210709_002216_421.jpg',
         '20210619_164312_274.jpg', '20210618_201418_240.jpg', '20210609_153320_341.jpg', '20210609_013812_297.jpg', '20210609_012612_160.jpg',
         '20210605_150321_393.jpg', '20210529_025027_472.jpg', '20210521_190022_911.jpg', '20210521_005350_307.jpg', '20210503_183554_125.jpg'],
-    everydayLife: ['IMG_20211017_142008_926.jpg', 'IMG_20210920_023848_006.jpg', 'IMG_20210203_174854_609.jpg', 'IMG_20201230_193123_485.jpg', 'IMG_20201230_025631_059.jpg',
+    everydaylife: ['IMG_20211017_142008_926.jpg', 'IMG_20210920_023848_006.jpg', 'IMG_20210203_174854_609.jpg', 'IMG_20201230_193123_485.jpg', 'IMG_20201230_025631_059.jpg',
         'IMG_20201227_191231_161.jpg', 'IMG_20201230_223555_568.jpg'],
     words: ['fall.jpeg', 'fear.jpeg', 'misery.jpeg', 'pain.jpeg', 'shame.jpeg', 'wine.jpeg', 'wwtimenspace.jpeg', 'zbadiou.jpeg'],
     monsters: ['angel.jpeg', 'ood.jpeg', 'silence.jpeg', 'thesis.jpeg']
@@ -27,13 +27,13 @@ const SingleGallery = () => {
     const {title} = useParams();
     const [name, setName] = useState(images[title]);
     const [showModal, setShowModal] = useState(false);
-    const [currentImage, setCurrentImage] = useState(`/src/images/monsters/silence.jpeg`);
+    const [currentImage, setCurrentImage] = useState(`/images/monsters/silence.jpeg`);
     const [currentIndex, setCurrentIndex] = useState(0);
     const nav = useNavigate();
 
     function zoomImage(index) {
         setShowModal(true);
-        setCurrentImage(`/src/images/${title}/${name[index]}`);
+        setCurrentImage(`/images/${title}/${name[index]}`);
         setCurrentIndex(index);
     }
 
@@ -44,7 +44,7 @@ const SingleGallery = () => {
         } else if (newIndex === name.length) {
             newIndex = 0;
         }
-        setCurrentImage(`/src/images/${title}/${name[newIndex]}`);
+        setCurrentImage(`/images/${title}/${name[newIndex]}`);
         setCurrentIndex(newIndex);
     }
 
@@ -75,7 +75,7 @@ const SingleGallery = () => {
                     modal
                 </div>}
             <div className="single-gallery p-1 g-1">
-                {name.map((x, i) => <img onClick={() => zoomImage(i)} key={i} src={`/src/images/${title}/${x}`}
+                {name.map((x, i) => <img onClick={() => zoomImage(i)} key={i} src={`/images/${title}/${x}`}
                                          alt=""/>)}
             </div>
             <h2 className="text-center p-2 go-back" onClick={() => nav("/gallery")}>{'<'} Grįžti į galeriją</h2>

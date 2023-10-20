@@ -10,7 +10,7 @@ const Gallery = () => {
                     <h1>Kaukolės su akimis</h1>
                 </div>
             </div>
-            <div onClick={() => nav('/gallery/everydayLife')} className="casual gallery-card">
+            <div onClick={() => nav('/gallery/everydaylife')} className="casual gallery-card">
                 <div>
                     <h1>Kasdienybė</h1>
                 </div>
