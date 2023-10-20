@@ -24,11 +24,11 @@ const Home = () => {
 
     return (
         <div className="about">
-            <h1 className="text-center p-1">
+            <div className="text-center p-1 main-title">
                 <FontAwesomeIcon icon={faCross}/>
                 <span className="mx-1">Avera Dellamorte</span>
                 <FontAwesomeIcon icon={faCross}/>
-            </h1>
+            </div>
             <div className="d-flex g-1 j-even p-1">
                 <div className="flex-1 p-1">
                     <div className={"oval-img-wrapper "+flip[0]} onClick={() => flipPicture(0)}>
