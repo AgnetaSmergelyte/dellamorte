@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTimes, faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
@@ -29,6 +29,30 @@ const SingleGallery = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const nav = useNavigate();
 
+    const handleKeyDown = (e) => {
+        switch (e.key) {
+            case 'ArrowRight':
+                navigateImage(1);
+                break;
+            case 'ArrowLeft':
+                navigateImage(-1);
+                break;
+            case 'Escape':
+                setShowModal(false);
+                break;
+            default:
+                break;
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
+
     function zoomImage(index) {
         setShowModal(true);
         setCurrentImage(`/images/${title}/${name[index]}`);
@@ -36,21 +60,23 @@ const SingleGallery = () => {
     }
 
     function navigateImage(num) {
-        let newIndex = currentIndex + num;
-        if (newIndex === -1) {
-            newIndex = name.length - 1;
-        } else if (newIndex === name.length) {
-            newIndex = 0;
-        }
-        setCurrentImage(`/images/${title}/${name[newIndex]}`);
-        setCurrentIndex(newIndex);
+        setCurrentIndex((currentIndex) => {
+            let newIndex = currentIndex + num;
+            if (newIndex === -1) {
+                newIndex = name.length - 1;
+            } else if (newIndex === name.length) {
+                newIndex = 0;
+            }
+            setCurrentImage(`/images/${title}/${name[newIndex]}`);
+            return newIndex;
+        });
     }
 
     return (
         <>
             {showModal &&
                 <div className="modal">
-                    <div>
+                    <div tabIndex="0" onKeyDown={handleKeyDown}>
                         <div className="modal-buttons">
                             <div className="d-flex j-end">
                                 <div onClick={() => setShowModal(false)} className="btn-close">
